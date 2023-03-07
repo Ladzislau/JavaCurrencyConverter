@@ -10,15 +10,15 @@ public class Main {
     public static void start() {
         System.out.print("""
                 ------------------------------------------------------------
-                Обратите внимание: для конвертации валют используются курсы,
-                предоставленные национальным банком Республики Беларусь.
+                Note that currency conversion rates are provided by the
+                National Bank of the Republic of Belarus.
                 ------------------------------------------------------------
-                Для выхода на любом из этапов введите "exit"
+                To exit at any stage, type "exit"
                 ------------------------------------------------------------
                 """);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("""
-                    Пожалуйста, укажите номер валюты, которую вы хотите конвертировать.
+                    Please enter the currency number you want to convert.
                     1) BYN \t\t 2) USD
                     3) RUB \t\t 4) EUR
                     5) UAH \t\t 6) GBP
@@ -31,12 +31,12 @@ public class Main {
                 if(temp.equals("exit")) return;
                 firstNum = Integer.parseInt(temp);
             } catch (IOException | NumberFormatException e) {
-                throw new RuntimeException("Пожалуйста, введите одно из предложенных чисел!");
+                throw new RuntimeException("Please enter one of the suggested numbers!");
             }
             RateService.requestByNumber(firstNum);
             System.out.print("""
                     ------------------------------------------------------------
-                    Пожалуйста, укажите номер валюты, в которую вы хотите конвертировать.
+                    Please enter the currency number you want to convert to.
                     1) BYN \t\t 2) USD
                     3) RUB \t\t 4) EUR
                     5) UAH \t\t 6) GBP
@@ -50,18 +50,18 @@ public class Main {
                 secondNum = Integer.parseInt(temp);
                 RateService.requestByNumber(secondNum);
             } catch (IOException | NumberFormatException e) {
-                throw new RuntimeException("Пожалуйста, введите одно из предложенных чисел!");
+                throw new RuntimeException("Please enter one of the suggested numbers!");
             }
             String amountOfMoney;
-            System.out.print("Введите сумму: ");
+            System.out.print("Enter the amount: ");
             while (!(amountOfMoney = reader.readLine()).equals("exit")) {
                 try {
                     double quantity = Double.parseDouble(amountOfMoney);
                     System.out.printf("%.2f %s = %.2f %s\n", quantity, RateService.getCurrencyIsoNameByNumber(firstNum),
                             RateService.convert(quantity), RateService.getCurrencyIsoNameByNumber(secondNum));
-                    System.out.print("Введите сумму: ");
+                    System.out.print("Enter the amount: ");
                 } catch (NumberFormatException e){
-                    throw new RuntimeException("Пожалуйста, введите число в формате 123 или 12.34");
+                    throw new RuntimeException("Please enter a number in the format of 123 or 12.34");
                 }
             }
         } catch (IOException e) {

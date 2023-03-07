@@ -48,7 +48,7 @@ public class RateService {
             case 6 -> APIOperation.updateRateListFromBankAPI(CurrencyIsoName.GBP);
             case 7 -> APIOperation.updateRateListFromBankAPI(CurrencyIsoName.PLN);
             case 8 -> APIOperation.updateRateListFromBankAPI(CurrencyIsoName.CHF);
-            default -> throw new IllegalArgumentException("Под данным номером нет валюты!");
+            default -> throw new IllegalArgumentException("There is no currency under this number!");
         }
     }
 
@@ -79,7 +79,7 @@ public class RateService {
             case 8 -> {
                 return CurrencyIsoName.CHF.getIsoName();
             }
-            default -> throw new IllegalArgumentException("Под данным номером нет валюты!");
+            default -> throw new IllegalArgumentException("There is no currency under this number!");
         }
     }
 }

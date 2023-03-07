@@ -21,17 +21,18 @@ public class APIOperation {
                 url = "https://developerhub.alfabank.by:8273/partner/1.0.1/public/nationalRates?currencyCode="
                         + RateService.getCurrencyMap().get(currency);
             } else {
-                throw new IllegalArgumentException("Значение валюты не определено");
+                throw new IllegalArgumentException("Currency is not defined");
             }
             Request request = new Request.Builder().url(url).get().build();
             try (Response response = client.newCall(request).execute()) {
                 ResponseBody responseBody = response.body();
+                assert responseBody != null;
                 String responseBodyString = responseBody.string();
                 Gson gson = new Gson();
                 Rates rates = gson.fromJson(responseBodyString, Rates.class);
                 RateService.rateList.addAll(rates.getRates());
             } catch (IOException e) {
-                System.out.println("Ошибка при попытке получения информации из банка");
+                throw new RuntimeException("An error occurred while attempting to retrieve information from the bank");
             }
         }
     }

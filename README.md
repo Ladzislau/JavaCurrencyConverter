@@ -1,17 +1,12 @@
-<h1>Конвертер валют на Java</h1>
-<p>Это конвертер валют на Java, написанный с использованием библиотек <a href="https://square.github.io/okhttp/">OKhttp</a> и 
-  <a href="https://github.com/google/gson">GSON</a> для запросов http и работы с JSON соответственно. Конвертер позволяет конвертировать валюты с помощью курсов валют, 
-  полученных из API запроса в банк.</p>
-<h2>Как использовать</h2>
-<p>Для использования конвертера вам необходимо запустить программу в среде разработки Java или скомпилировать и запустить ее из командной строки. 
-  После запуска программы вы cможете выбрать валюты для конвертации, а после ввести сумму, которую нужно конвертировать. 
-  Курсы валют будут автоматически получены из API запроса в банк.</p>
-<h2>Требования</h2>
-<p>Для работы конвертера вам необходимо иметь установленную среду разработки Java и библиотеки OKhttp и GSON.</p>
-<h2>Как установить</h2>
+<h1>Currency Converter in Java</h1>
+<p>This is a currency converter written in Java, using the <a href="https://square.github.io/okhttp/">OKhttp</a> and <a href="https://github.com/google/gson">GSON</a> libraries for HTTP requests and JSON processing respectively. The converter allows you to convert currencies using exchange rates obtained from an API request to a bank</p>
+<h2>How to use</h2>
+<p>To use the converter, you need to run the program in a Java development environment or compile and run it from the command line. After starting the program, you can select the currencies to convert and then enter the amount you want to convert. The exchange rates will be automatically obtained from an API request to the bank.</p>
+<h2>Requirements</h2>
+<p>To run the converter, you need to have a Java development environment and the OKhttp and GSON libraries installed.</p>
+<h2>How to install</h2>
 <ol>
-  <li>Клонируйте репозиторий с помощью команды <code>git clone https://github.com/Ladzislau/JavaCurrencyConverter.git</code></li>
-  <li>Убедитесь, что у вас установлена среда разработки Java и библиотеки OKhttp и GSON</li>
-  <li>Откройте проект в своей среде разработки Java</li>
-  <li>Запустите программу</li>
+  <li>Clone the repository using the command <code>git clone https://github.com/Ladzislau/JavaCurrencyConverter.git</code></li>
+  <li>Make sure that you have a Java development environment and the OKhttp and GSON libraries installed</li>
+  <li>Open the project in your Java development environment and run the program</li>
 </ol>
